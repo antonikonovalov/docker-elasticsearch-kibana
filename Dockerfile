@@ -11,7 +11,8 @@ RUN \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
-  
+# instal plugins
+RUN ./elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/v1.4.6
 RUN \
   cd / && \
   wget https://download.elasticsearch.org/kibana/kibana/$KIB_PKG_NAME.tar.gz && \
@@ -19,6 +20,7 @@ RUN \
   rm -f $KIB_PKG_NAME.tar.gz && \
   mv /$KIB_PKG_NAME /kibana
 
+#install supervisor
 RUN apt-get update && apt-get install -y supervisor
 RUN mkdir -p \
   /var/lock/elasticsearch /var/run/elasticsearch /var/log/elasticsearch \
