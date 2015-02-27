@@ -12,7 +12,7 @@ RUN \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
 # instal plugins
-RUN ./elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/v1.4.6
+RUN sh /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/v1.4.6
 RUN \
   cd / && \
   wget https://download.elasticsearch.org/kibana/kibana/$KIB_PKG_NAME.tar.gz && \
