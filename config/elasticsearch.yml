@@ -1,0 +1,7 @@
+
+cluster.name: "mrkt-docker-es"
+node.name: "mrkt-docker-es-plus"
+path:
+  data: /data/data
+  logs: /data/log
+  work: /data/work
