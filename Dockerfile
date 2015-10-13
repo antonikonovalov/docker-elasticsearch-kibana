@@ -1,8 +1,8 @@
 # Pull base image.
 FROM dockerfile/java:oracle-java8
 
-ENV ES_PKG_NAME elasticsearch-1.5.2
-ENV KIB_PKG_NAME kibana-4.0.2-linux-x64
+ENV ES_PKG_NAME elasticsearch-1.7.1
+ENV KIB_PKG_NAME kibana-4.1.2-linux-x64
 
 # Install Elasticsearch.
 RUN \
@@ -12,7 +12,7 @@ RUN \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
 # instal plugins
-RUN sh /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/v1.5.0
+RUN sh /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/v1.5.7
 RUN \
   cd / && \
   wget https://download.elastic.co/kibana/kibana/$KIB_PKG_NAME.tar.gz && \
