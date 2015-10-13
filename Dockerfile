@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/java:oracle-java8
+FROM java:8-jre
 
 ENV ES_PKG_NAME elasticsearch-1.7.1
 ENV KIB_PKG_NAME kibana-4.1.2-linux-x64
